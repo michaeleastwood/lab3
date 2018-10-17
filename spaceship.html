@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include our dependency on angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="spaceship.js"></script>
+    <link rel="stylesheet" type="text/css" href="spaceship.css">
+    <meta charset="utf-8">
+    <title>Game</title>
+</head>
+
+<body ng-app="characterSelection">
+    <canvas id='canvas'></canvas>
+    <form ng-controller="CharacterSelect">
+       <label ng-repeat="char in characters" for="{{char}}">
+       {{char.name}}
+       <input type="radio"
+              ng-model="go.selection"
+              ng-value="char"
+              id="{{character}}"
+              name="selection">
+     </label>
+        <div>Your selection {{go.selection}}</div>
+    </form>
+</body>
+
+</html>
