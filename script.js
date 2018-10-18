@@ -55,6 +55,12 @@ angular.module('game', ['ui.router'])
                 "type": "Russia",
                 "coords": "300,100,75"
             }];
+            $scope.characters = [{
+                "id" : "",
+                "src" : "",
+                "height" : "",
+                "width" : ""
+            }]
             $scope.location = locFactory.loc;
             $scope.character = charFactory.char;
 
@@ -67,8 +73,11 @@ angular.module('game', ['ui.router'])
             $scope.partClicked = function(id) {
                 $scope.location = id;
                 locFactory.loc = id;
-                console.log(locFactory);
             };
+            $scope.charClicked = function(id) {
+                $scope.character = id;
+                charFactory.char = id;
+            }
         }
     ])
     .controller('GameCtrl', [
@@ -76,15 +85,11 @@ angular.module('game', ['ui.router'])
         'locFactory',
         'charFactory',
         function($scope, locFactory, charFactory) {
-            console.log(locFactory);
             $scope.location = locFactory.loc;
             switch($scope.location){
                 case "New York City":
                     $scope.image = "grass.png"
             }
-            console.log($scope.image);
-            // $scope.loc = locFactory.locations[$stateParams.id];
-            // $scope.addComment = function() {
-            // };
+
         }
     ]);
