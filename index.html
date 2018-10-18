@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body class="bodyClass" ng-app="game">
+    <ui-view></ui-view>
+
+
+    <script type="text/ng-template" id="/home.html">
+        <div id="homePage">
+            <p id="title">Game Name</p>
+            <p id="discription">Choose a location and character!</p>
+            <div id='right'>
+                <div class="mapSide">
+                    <img class="imageCard map" id="img_ID" src="map.jpg" usemap="#map" border="0" height="300px" alt="" />
+                    <map name="map">
+                        <area ng-repeat="part in map" shape="{{part.shape}}" coords="{{part.coords}}" ng-click='partClicked(part.type)' title="{{part.type}}" />
+                    </map>
+                </div>
+                <div class="characterSide">
+                    <!-- image thing contain certain ng-repeat="char in characters" src={{char.src}} id={{char.name}} and ng-click="charClicked(char.name)"-->
+                </div>
+            </div>
+            <div id="chosen">
+                <div id="sections">
+                    Location: <br/>{{location}}
+                </div>
+                <div id="sections">
+                    Character:<br/>{{ character }}
+                </div>
+                <div id="sections">
+                    <a href="#/game/"><button>Start Game</button></a>
+                </div </div>
+            </div>
+    </script>
+
+    <script type="text/ng-template" id="/game.html">
+        <div class="page-header">
+            <a href="#">
+                <div class="edit">
+                    Edit
+                </div>
+            </a>
+            <h3>
+                <img src="{{image}}" width=100%>
+            </h3>
+        </div>
+    </script>
+</body>
+
+
+</html>

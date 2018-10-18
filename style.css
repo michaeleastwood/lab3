@@ -1,0 +1,89 @@
+#homePage {
+    min-height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    height:95%;
+    background-color: #535456;
+}
+
+.imageCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.mapSide {
+    float: left;
+    width: 50%;
+    padding: 0px 10px 5px 10px;
+    margin: 0px;
+    text-align:center;
+}
+
+.characterSide {
+    float: left;
+    width: 50%;
+    height: 300px;
+    padding: 0px 10px 5px 10px;
+    margin: 0px;
+}
+
+.map {
+    margin: 20px;
+}
+
+#title {
+    font-size: 60px;
+    margin:0px 0px 5px 0px;
+}
+
+#discription {
+    font-size: 22px;
+    margin:0;
+
+}
+
+body {
+    color: white;
+}
+
+.loc {
+    height:100%;
+    vertical-align:middle;
+}
+
+#chosen {
+    background-color: #71916b;
+    width: 55%;
+    height: 75px;
+    z-index:100;
+    position:absolute;
+    bottom:12%;
+    left:25%;
+    border-radius:15px;
+    text-align:center;
+    vertical-align: middle;
+    min-width:480px;
+    
+}
+
+#right {
+    background-color: yellow;
+    display:block;
+}
+#sections{
+    width:30%;
+    display:inline-block;
+    height:100%;
+}
+h3{
+    color:black;
+}
+.edit{
+    width:100%;
+    height:50px;
+    background-color: #535456;
+    color:white;
+    font-size:30px;
+    text-align:center;
+    
+}
