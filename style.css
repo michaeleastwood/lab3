@@ -90,3 +90,14 @@ h3{
     text-align:center;
     font-family: 'Raleway', sans-serif;
 }
+.charList{
+    border-radius: 8px;
+    float: left; 
+    padding: 16px; 
+    border-style: inset;
+    margin: 3px 3px 0 0;
+}
+.charList:hover {
+    background-color: #F5F5F5;
+    color: #000000;
+}

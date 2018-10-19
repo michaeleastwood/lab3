@@ -27,13 +27,15 @@
             <p id="discription">Choose a location and character!</p>
             <div id='right'>
                 <div class="mapSide">
-                    <img class="imageCard map" id="img_ID" src="map.jpg" usemap="#map" border="0" height="300px" alt="" />
+                    <img class="imageCard map" id="img_ID" src="map.png" usemap="#map" border="0" height="300px" alt="" />
                     <map name="map">
                         <area ng-repeat="part in map" shape="{{part.shape}}" coords="{{part.coords}}" ng-click='partClicked(part.type)' title="{{part.type}}" />
                     </map>
                 </div>
                 <div class="characterSide">
-                    <!-- image thing contain certain ng-repeat="char in characters" src="{{char.src}}" id="{{char.id}}" and ng-click="charClicked(char.id)"-->
+                    <div ng-repeat="char in characters"  ng-click="charClicked(char)"> 
+                        <div class="charList"> {{char.id}} </div>
+                    </div>
                 </div>
             </div>
             <div id="chosen">
@@ -41,7 +43,7 @@
                     Location: <br/>{{location}}
                 </div>
                 <div id="sections">
-                    Character:<br/>{{ character }}
+                    Character:<br/>{{ character.id }}
                 </div>
                 <div id="sections">
                     <a href="#/game/"><button>Start Game</button></a>
@@ -57,7 +59,7 @@
                 </div>
             </a>
             <h3>
-                <img src="{{image}}" width=100%>
+                <canvas id='canvas'></canvas>
             </h3>
         </div>
     </script>
